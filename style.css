@@ -1,5 +1,48 @@
+
+body{
+    background-color: turquoise;
+}
+
+
 .wrapper{
     margin-top: 215px;
     
+}
+
+#jumbo{
+    border-radius: 50px;
+    
+}
+
+#start-btn{
+    background-color: turquoise;
+    color: black;
+    border: solid 1px black;
+
+}
+
+#start-btn, #answer-btn:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+.hide{
+    display: none;
+}
+
+#answer-btn{
+    background-color: turquoise;
+    color: black;
+    border: solid 1px black;
+}
+
+.question-font{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.question-container{
+    border-radius: 50px;
 }
 
