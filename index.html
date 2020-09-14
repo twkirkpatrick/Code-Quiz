@@ -11,7 +11,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Code Quiz</a>
+        <a class="navbar-brand" href="">Code Quiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,15 +21,21 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">High Scores <span class="sr-only">(current)</span></a>
             </li>
+            <li>
+              <h5 id="time-style">Time Remaining:<span id="time"> </span></h5>
+            </li>
           </ul>
         </div>
       </nav>
     <!-- START PAGE -->
+
+      
       <div class="container">
           <div class="row">
               <div class="col-md-6 mx-auto">
+                
                 <div class="wrapper">  
-                    <div class="jumbotron text-center border border-primary main-content" id="jumbo">
+                    <div class="jumbotron text-center border main-content" id="jumbo">
                         <h1 class="display-4">Test Your JavaScript Skills!</h1>
                         <button class="btn btn-primary btn-lg mt-5" id="start-btn" role="button">Start</button>
                       </div>
@@ -40,23 +46,36 @@
 
       <!-- QUESTION CONTAINER -->
       <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-              <div class="question-wrapper">  
-                <div class="jumbotron jumbotron-fluid hide question-container">
-                    <div class="container">
-                      <h1 class="display-4 question-font" id="question"></h1>
-                      <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn1" role="button"></button>
-                      <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn2" role="button"></button>
-                      <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn3" role="button"></button>
-                      <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn4" role="button"></button>
+          <div class="row">
+              <div class="col-md-8 mx-auto">
+                  <div class="question-wrapper">  
+                      <div class="jumbotron jumbotron-fluid hide question-container">
+                          <div class="container">
+                            <h2 class="display-4 question-font" id="question"></h2>
+                              <div id="answers" class="choicesBtn">
+                              </div>
+                              <!-- <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn1" role="button">A</button>
+                              <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn2" role="button">B</button>
+                              <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn3" role="button">C</button>
+                              <button class="btn btn-primary btn-lg mt-5 ml-5" id="answer-btn4" role="button">D</button> -->
+                          </div>
+                      </div>
+                  </div>  
+              </div>
+          </div>
+      </div>
 
-                    </div>
-                  </div>
-              </div>  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card text-center hide">
+              <div class="card-body">
+                <h5 class="card-title">Enter Your Initials!</h5>
+                  <input type="text" id="fname" name="fname" ><br>
+                <a href="#" class="btn btn-primary submit-btn" id="submit-btn">Submit</a>
+              </div>
+              
             </div>
-        </div>
-    </div>
      
 
          <!-- Javascript -->

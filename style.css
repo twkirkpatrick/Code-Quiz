@@ -5,12 +5,33 @@ body{
 
 
 .wrapper{
-    margin-top: 215px;
+    margin-top: 100px;
     
+}
+
+#time{
+    padding-left: 7px;
+    
+}
+
+#time-style{
+   /*  margin-top: 80px;
+    margin-left: 153px;
+    width: 40%;
+    padding: 10px;
+    border: solid 2px red;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: red; */
+    margin-left: 400px;
+    padding-top: 10px;
 }
 
 #jumbo{
     border-radius: 50px;
+    border: solid 2px black !important;
+    font-weight: bolder !important;
+    margin-top: 225px;
     
 }
 
@@ -21,7 +42,7 @@ body{
 
 }
 
-#start-btn, #answer-btn:hover{
+#start-btn, .choice, #submit-btn:hover{
     transition: transform 150ms;
     transform: scale(1.05);
 }
@@ -36,13 +57,46 @@ body{
     border: solid 1px black;
 }
 
+#answers{
+    text-align: center;
+    margin-top: 30px;
+}
+
 .question-font{
-    font-size: 20px;
+    font-size: 35px;
     text-align: center;
     font-weight: bold;
 }
 
 .question-container{
     border-radius: 50px;
+    border: 2px solid black;
+    margin-top: 85px;
 }
+
+.choice{
+    margin: 20px;
+    background-color: turquoise;
+    color: black;
+    border: solid 1px black;
+    border-radius: 4px;
+    font-size: 25px;
+    
+}
+
+.card{
+    margin-top: 200px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#submit-btn{
+    background-color: turquoise;
+    color: black;
+    border: solid 1px black;
+    margin-top: 10px;
+    font-weight: bolder;
+
+}
+
 

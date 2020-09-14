@@ -1,6 +1,11 @@
 
 //Start Button
 var startButton = document.querySelector("#start-btn");
+var timeDisplay = document.querySelector("#time");
+var timeHide = document.querySelector(".hide");
+var time = 75;
+var userScore = 0;
+
 
 
 //Container on opening page
@@ -8,110 +13,203 @@ var mainContent = document.querySelector(".main-content");
 
 //Empty Question Container
 var questionContainer = document.querySelector(".question-container");
+//var choicesBtn = document.querySelector(".choicesBtn");
+var currentQuestion = 0;
+var choicesBtn = document.querySelector("#answers");
+var input = document.querySelector(".card");
+var submit = document.querySelector(".submit-btn");
 
 
-let currentQuestion = 0;
-
-const questionText = document.querySelector("#question");
-const answerOne = document.querySelector("#answer-btn1");
-const answerTwo = document.querySelector("#answer-btn2");
-const answerThree = document.querySelector("#answer-btn3");
-const answerFour = document.querySelector("#answer-btn4");
-
-const questions = [
-
+var questions = [
     {
         question: "What is an example of a boolean?",
-        choices: ["Selector", "true", "HTML", "4"],
+        choices: ["Selector", "true", "HTML", "48"],
         answer: "true"
     },
     {
-        question: "What is an example of a boolean?",
-        choices: ["Selector", "true", "HTML", "4"],
-        answer: "true"
+        question: "Which reserved keyword is used to define a variable?",
+        choices: ["var", "let", "const", "all of the above"],
+        answer: "all of the above"
     },
     {
-        question: "What is an example of a boolean?",
-        choices: ["Selector", "true", "HTML", "4"],
-        answer: "true"
+        question: "Which attribute do you use to reference a JavaScript file?",
+        choices: ["src", "href", "name", "class"],
+        answer: "src"
     },
     {
-        question: "What is an example of a boolean?",
-        choices: ["Selector", "true", "HTML", "4"],
-        answer: "true"
+        question: "How do you create a function in JavaScript?",
+        choices: ["function:myFunction", "function myFunction()", "function = myFunction()", "myFunction"],
+        answer: "function myFunction()"
     },
     {
-        question: "What is an example of a boolean?",
-        choices: ["Selector", "true", "HTML", "4"],
-        answer: "true"
+        question: "Which operator is used to assign a value to a variable?",
+        choices: ["*", "-", "=", "x"],
+        answer: "="
     }
-
 ]
    
-
-
-
-
 
 startButton.addEventListener("click", startGame);
 
 function startGame(){
-    console.log("started");
+    /* console.log("started"); */
     startButton.classList.add("hide");
     mainContent.classList.add("hide");
     questionContainer.classList.remove("hide");
+    timeHide.classList.remove("hide");
     setNextQuestion();
-    
-    
-    
+    /* setInterval(countDown, 1000); */
 
 }
 
 function setNextQuestion(){
-    const current = questions[currentQuestion];
-
-    questionText.innerText = current.question;
-
-    answerOne.innerText = current.choices[0];
     
+    if(currentQuestion === 5){
+        
+        endGame();
+        return;
+        //stop timer here as well
+    }
+    choicesBtn.textContent = "";
+    var questionDisplay = questions[currentQuestion];
+    var title = document.getElementById("question");
+    title.textContent = questionDisplay.question;
+
+    
+    for (var t = 0; t < 4; t++) {
+        var answerBtn = document.createElement("button");
+        answerBtn.setAttribute("id", t);
+        answerBtn.setAttribute("class", "choice");
+        answerBtn.setAttribute("value", questionDisplay.choices[t]);
+        answerBtn.textContent = questionDisplay.choices[t];
+        choicesBtn.appendChild(answerBtn);
+    }
+    //This ended up being the fix. jQuery will iterate through everything but since we can only use JavaScript, we have to loop through a "querySelectorAll". Also, I think 'answerBtn' was in a unique situation where it does it's job in the scope of the loop, but then gets obliterated once outside of the loop.
+    var clickedButt = document.querySelectorAll(".choice");
+    for (var t = 0; t < clickedButt.length; t++) {
+        clickedButt[t].addEventListener("click", selectAnswer);
+    }    
+
+    
+    
+    
+
+
+}
+
+
+
+
+function selectAnswer (){
+    
+    
+    
+    if (this.value === questions[currentQuestion].answer){
+        
+        console.log("You picked the correct answer!");
+        userScore += 15;
+        console.log(userScore);
+        currentQuestion++;
+        setNextQuestion();
+
+        
+          
+    } 
+    
+
+    else {
+        console.log("you picked the wrong answer!");
+        
+        time -= 10;
+        console.log(userScore);
+        currentQuestion++;
+        setNextQuestion();
+        
+        
+             
+    }
+
     
    
+    
+    
 }
 
 
-function selectAnswer(){
 
-
-}
 
 
 //---TIMER------------------------------------
 
-/* var time = 59;
+/* function countDown(){
 
-var elapsed = 0;
+    time --;
+    timeDisplay.textContent = time;
+    if(time === 0){
+        endGame();
+    }
+} */
 
-var interval;
-
-function appendTime(){
-    console.log({time, past});
-}
-
-function wrongPenalty(){
-    elapsed += 5;
-}
-
-function startTimer(){
-    if (elapsed < time){
-    interval = setInterval(function(){
-    elapsed++
-    appendTime();
-           }, 1000)
-    } else{
-        clearInterval(interval);
+submit.addEventListener("click", function(){
+    
+    var submitVal = document.getElementById("fname").value;
+    
+    if(submitVal === ""){
+        alert("You must enter something in the field!");
     }
 
+    console.log(submitVal + userScore);
     
+
+    
+})
+
+
+
+
+
+
+
+
+
+function endGame(){
+    questionContainer.classList.add("hide");
+    input.classList.remove("hide");
+    
+    var finalScore = "Your score: " + userScore + " pts";
+    
+
+    input.prepend(finalScore); 
+
+
+
+    
+    
+    
+            //call endGame function -- make form in html and hide it, then remove class of hide
+
 }
 
-startTimer(); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
