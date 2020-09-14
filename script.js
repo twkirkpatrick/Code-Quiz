@@ -1,23 +1,19 @@
 
-//Start Button
+
 var startButton = document.querySelector("#start-btn");
 var timeDisplay = document.querySelector("#time");
-var timeHide = document.querySelector(".hide");
-var time = 75;
-var userScore = 0;
-
-
-
-//Container on opening page
+var timeHide = document.querySelector(".go-away");
+var timerText = document.querySelector("#time-style");
 var mainContent = document.querySelector(".main-content");
-
-//Empty Question Container
 var questionContainer = document.querySelector(".question-container");
-//var choicesBtn = document.querySelector(".choicesBtn");
-var currentQuestion = 0;
 var choicesBtn = document.querySelector("#answers");
 var input = document.querySelector(".card");
 var submit = document.querySelector(".submit-btn");
+var confirmation = document.querySelector("#confirmation");
+
+var time = 51;
+var userScore = 0;
+var currentQuestion = 0;
 
 
 var questions = [
@@ -53,23 +49,23 @@ startButton.addEventListener("click", startGame);
 
 function startGame(){
     /* console.log("started"); */
+    countDown();
+    var startSound = document.createElement("audio");
+    startSound.setAttribute("src", "assets/start.mp3");
+    startSound.play();
     startButton.classList.add("hide");
     mainContent.classList.add("hide");
     questionContainer.classList.remove("hide");
-    timeHide.classList.remove("hide");
+    
     setNextQuestion();
-    /* setInterval(countDown, 1000); */
-
+    
 }
 
 function setNextQuestion(){
+
     
-    if(currentQuestion === 5){
-        
-        endGame();
-        return;
-        //stop timer here as well
-    }
+    
+    
     choicesBtn.textContent = "";
     var questionDisplay = questions[currentQuestion];
     var title = document.getElementById("question");
@@ -91,6 +87,10 @@ function setNextQuestion(){
     }    
 
     
+
+    
+
+    
     
     
 
@@ -109,6 +109,19 @@ function selectAnswer (){
         console.log("You picked the correct answer!");
         userScore += 15;
         console.log(userScore);
+        var positive = document.createElement("audio");
+        positive.setAttribute("src", "assets/positive.mp3");
+        positive.play();
+        questionContainer.style.backgroundColor = "green";
+
+        setTimeout(function(){
+        questionContainer.style.backgroundColor = "gainsboro";
+        },300)
+
+
+        
+        
+
         currentQuestion++;
         setNextQuestion();
 
@@ -120,7 +133,15 @@ function selectAnswer (){
     else {
         console.log("you picked the wrong answer!");
         
+        questionContainer.style.backgroundColor = "red";
+        setTimeout(function(){
+        questionContainer.style.backgroundColor = "gainsboro";
+        },300)
+        
         time -= 10;
+        var negative = document.createElement("audio");
+        negative.setAttribute("src", "assets/negative.mp3");
+        negative.play();
         console.log(userScore);
         currentQuestion++;
         setNextQuestion();
@@ -141,14 +162,30 @@ function selectAnswer (){
 
 //---TIMER------------------------------------
 
-/* function countDown(){
+function countDown(){
 
-    time --;
-    timeDisplay.textContent = time;
-    if(time === 0){
-        endGame();
-    }
-} */
+    
+
+    var timeCurrent = setInterval(function(){
+        time --;
+        if(time == 0 || currentQuestion === 5){
+            clearInterval(timeCurrent);
+            endGame();
+        } 
+        
+        else if(time <= 10){
+            timeDisplay.style.color = "red";
+            timeDisplay.style.fontSize = "30px";
+            timerText.style.color = "red";
+            timerText.style.fontSize = "30px";
+        }
+
+        timeHide.classList.remove("hide");
+        timeDisplay.textContent = time;
+        console.log(time);
+    }, 1000);
+    
+}
 
 submit.addEventListener("click", function(){
     
@@ -174,9 +211,11 @@ submit.addEventListener("click", function(){
 
 function endGame(){
     questionContainer.classList.add("hide");
+    timeHide.classList.add("hide");
     input.classList.remove("hide");
     
-    var finalScore = "Your score: " + userScore + " pts";
+    
+    var finalScore = "Score: " + userScore + " pts";
     
 
     input.prepend(finalScore); 
@@ -189,6 +228,8 @@ function endGame(){
             //call endGame function -- make form in html and hide it, then remove class of hide
 
 }
+
+
 
 
 

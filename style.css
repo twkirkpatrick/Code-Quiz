@@ -1,8 +1,17 @@
 
-body{
-    background-color: turquoise;
+*{
+    font-family: 'Lobster', cursive;
 }
 
+body{
+    background-image: linear-gradient(teal, lightgray);
+    height: 100vh;
+}
+
+.nav-style{
+    background-color: gainsboro !important;
+    border-bottom: 1px solid black;
+}
 
 .wrapper{
     margin-top: 100px;
@@ -23,23 +32,41 @@ body{
     border-radius: 5px;
     background-color: lightgray;
     color: red; */
-    margin-left: 400px;
-    padding-top: 10px;
+
+    padding-top: 20px;
+    text-align: center;
 }
 
 #jumbo{
-    border-radius: 50px;
-    border: solid 2px black !important;
+    border-radius: 15px;
+    /* border: solid 2px black !important; */
     font-weight: bolder !important;
-    margin-top: 225px;
+    margin-top: 125px;
+    background-color: gainsboro;
+    box-shadow: 10px 15px 13px  rgb(31, 30, 30);
+    
+    
     
 }
 
-#start-btn{
-    background-color: turquoise;
-    color: black;
-    border: solid 1px black;
+.styles{
+    border-top: 3px solid black;
+    width: 100%;
+    
+}
 
+/* #underline{
+    border-bottom: 3px solid black;
+}
+ */
+#start-btn{
+    background-color: rgb(20, 212, 212);
+    color: black;
+    border: solid 2px rgb(114, 100, 100) !important;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    margin-top: 5px !important;
 }
 
 #start-btn, .choice, #submit-btn:hover{
@@ -72,6 +99,7 @@ body{
     border-radius: 50px;
     border: 2px solid black;
     margin-top: 85px;
+    background-color: gainsboro;
 }
 
 .choice{
@@ -85,9 +113,10 @@ body{
 }
 
 .card{
-    margin-top: 200px;
+    margin-top: 150px;
     border-radius: 10px;
     border: 2px solid black;
+    
 }
 
 #submit-btn{
