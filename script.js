@@ -116,7 +116,7 @@ function selectAnswer (){
 
         setTimeout(function(){
         questionContainer.style.backgroundColor = "gainsboro";
-        },300)
+        },100)
 
 
         
@@ -136,7 +136,7 @@ function selectAnswer (){
         questionContainer.style.backgroundColor = "red";
         setTimeout(function(){
         questionContainer.style.backgroundColor = "gainsboro";
-        },300)
+        },100)
         
         time -= 10;
         var negative = document.createElement("audio");

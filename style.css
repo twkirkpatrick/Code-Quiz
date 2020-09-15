@@ -41,7 +41,7 @@ body{
     border-radius: 15px;
     /* border: solid 2px black !important; */
     font-weight: bolder !important;
-    margin-top: 125px;
+    margin-top: 175px;
     background-color: gainsboro;
     box-shadow: 10px 15px 13px  rgb(31, 30, 30);
     
@@ -59,7 +59,7 @@ body{
     border-bottom: 3px solid black;
 }
  */
-#start-btn{
+#start-btn, #home-btn, #submit-btn, #try-btn{
     background-color: rgb(7, 131, 131);
     color: whitesmoke;
     border: none !important;
@@ -69,10 +69,33 @@ body{
     margin-top: 5px !important;
 }
 
-#start-btn, .choice, #submit-btn:hover{
+
+
+
+
+
+#start-btn:hover{
     transition: transform 150ms;
     transform: scale(1.05);
 }
+
+.choice:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+#submit-btn:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+#try-btn:hover{
+    transition: transform 150ms;
+    transform: scale(1.05);
+}
+
+
+
 
 .hide{
     display: none;
@@ -115,13 +138,13 @@ body{
 }
 
 .card{
-    margin-top: 150px;
+    margin-top: 100px;
     border-radius: 10px;
     border: 2px solid black;
     
 }
 
-#submit-btn{
+/* #submit-btn{
     background-color: turquoise;
     color: black;
     border: solid 1px black;
@@ -130,4 +153,13 @@ body{
 
 }
 
+#try-btn{
+    background-color: turquoise;
+    color: black;
+    border: solid 1px black;
+    margin-top: 10px;
+    font-weight: bolder;
+
+}
+ */
 
