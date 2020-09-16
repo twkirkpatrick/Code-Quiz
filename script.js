@@ -170,6 +170,8 @@ submit.addEventListener("click", function(){
 
     clearField();
 
+    window.location.assign("/highscores.html");
+
 })
 
 function clearField(){
