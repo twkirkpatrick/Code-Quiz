@@ -24,22 +24,12 @@ body{
 }
 
 #time-style{
-   /*  margin-top: 80px;
-    margin-left: 153px;
-    width: 40%;
-    padding: 10px;
-    border: solid 2px red;
-    border-radius: 5px;
-    background-color: lightgray;
-    color: red; */
-
     padding-top: 20px;
     text-align: center;
 }
 
 #jumbo{
     border-radius: 15px;
-    /* border: solid 2px black !important; */
     font-weight: bolder !important;
     margin-top: 175px;
     background-color: gainsboro;
@@ -55,10 +45,7 @@ body{
     
 }
 
-/* #underline{
-    border-bottom: 3px solid black;
-}
- */
+
 #start-btn, #home-btn, #submit-btn, #try-btn{
     background-color: rgb(7, 131, 131);
     color: whitesmoke;
@@ -76,25 +63,23 @@ body{
 
 #start-btn:hover{
     transition: transform 150ms;
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .choice:hover{
     transition: transform 150ms;
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 #submit-btn:hover{
     transition: transform 150ms;
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 #try-btn:hover{
     transition: transform 150ms;
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
-
-
 
 
 .hide{
@@ -144,22 +129,7 @@ body{
     
 }
 
-/* #submit-btn{
-    background-color: turquoise;
-    color: black;
-    border: solid 1px black;
-    margin-top: 10px;
-    font-weight: bolder;
+/* media queries */
 
-}
 
-#try-btn{
-    background-color: turquoise;
-    color: black;
-    border: solid 1px black;
-    margin-top: 10px;
-    font-weight: bolder;
-
-}
- */
 
