@@ -5,7 +5,7 @@ This is homework assignment #4 for the University of Richmond Full Stack Bootcam
 <img src="assets/main.jpg" alt="password generator screenshot">
 <img src="assets/question.jpg" alt="password generator screenshot">
 <img src="assets/end.jpg" alt="password generator screenshot">
-<img src="assets/high.jpg" alt="password generator screenshot">
+<img src="assets/score.jpg" alt="password generator screenshot">
 
 
 

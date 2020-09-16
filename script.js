@@ -153,8 +153,8 @@ function countDown(){
 
 
 function storeScores(name, score) { 
-    localStorage.setItem();
-    console.log(name + score);
+    
+    localStorage.setItem(name, score);
 }
 
 
@@ -168,7 +168,13 @@ submit.addEventListener("click", function(){
 
     storeScores(submitVal, userScore);
 
+    clearField();
+
 })
+
+function clearField(){
+    document.getElementById("fname").value = "";
+}
 
 
 function endGame(){
